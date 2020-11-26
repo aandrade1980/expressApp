@@ -10,6 +10,16 @@ exports.show_leads = function (req, res, next) {
   });
 };
 
+exports.show_lead = function (req, res, next) {
+  models.Lead.findOne({
+    where: {
+      id: req.params.lead_id
+    }
+  }).then(lead => {
+    res.render('lead', { lead });
+  });
+};
+
 exports.submit_lead = (req, res, next) =>
   models.Lead.create({
     email: req.body.lead_email
