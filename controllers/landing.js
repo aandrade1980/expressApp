@@ -6,7 +6,7 @@ exports.get_landing = function (req, res, next) {
 
 exports.show_leads = function (req, res, next) {
   models.Lead.findAll().then(leads => {
-    res.render('landing', { title: 'Express', leads });
+    res.render('lead/leads', { title: 'Express', leads });
   });
 };
 
@@ -16,7 +16,7 @@ exports.show_lead = function (req, res, next) {
       id: req.params.lead_id
     }
   }).then(lead => {
-    res.render('lead', { lead });
+    res.render('lead/lead', { lead });
   });
 };
 
