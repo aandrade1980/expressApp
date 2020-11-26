@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="/", method="POST")
+    input(type="email", name="email", placeholder="Enter you email address")
+    button(type="submit") Submit
