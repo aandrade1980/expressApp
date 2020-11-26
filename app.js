@@ -23,7 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: 'our new secret' }));
+app.use(
+  session({ secret: 'our new secret', resave: false, saveUninitialized: false })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 

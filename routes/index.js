@@ -7,9 +7,12 @@ const user = require('../controllers/user');
 /* USER - GETS */
 router.get('/login', user.show_login);
 router.get('/signup', user.show_signup);
+router.get('/logout', user.logout);
 
 /* USER - POSTS */
 router.post('/signup', user.signup);
+router.post('/login', user.login);
+router.post('/logout', user.logout);
 
 /* GET home page. */
 router.get('/', landing.get_landing);
